@@ -102,7 +102,7 @@ client.on("message", (message) => {
                   unregMob.push(dataRow[i].scode);
                 }
               });
-            await sleep(5000);
+            await sleep(3000);
           }
         };
         await demo1(x);
