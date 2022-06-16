@@ -47,7 +47,8 @@ client.on("message", (message) => {
                     tempMsg = tempMsg.replace(`<${element}>`,`${dataRow[i][element]}`)
                     // console.log(dataRow[i][element])
                   });
-                  client.sendMessage(`91${dataRow[i].mobile}@c.us`, media,{caption: tempMsg});
+                  client.sendMessage(`91${dataRow[i].mobile}@c.us`, media);
+                  client.sendMessage(`91${dataRow[i].mobile}@c.us`, tempMsg);
                   countReg += 1;
                   // client.sendMessage(media,})
                 } else {
@@ -55,7 +56,7 @@ client.on("message", (message) => {
                   unregMob.push(dataRow[i].scode);
                 }
               });
-            await sleep(5000);
+            await sleep(3000);
           }
         };
         await demo1(x);
