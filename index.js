@@ -3,7 +3,6 @@ const csvtojson = require("csvtojson");
 const { Client } = require("whatsapp-web.js");
 const { MessageMedia } = require("whatsapp-web.js");
 const client = new Client();
-// const media = MessageMedia.fromFilePath("test.jpeg");
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
@@ -47,8 +46,17 @@ client.on("message", (message) => {
                     tempMsg = tempMsg.replace(`<${element}>`,`${dataRow[i][element]}`)
                     // console.log(dataRow[i][element])
                   });
-//                   client.sendMessage(`91${dataRow[i].mobile}@c.us`, media);
-                  client.sendMessage(`91${dataRow[i].mobile}@c.us`, tempMsg);
+                  let media = MessageMedia.fromFilePath(`ss/${dataRow[i].scode}.png`);
+                  // client.sendMessage(`91${dataRow[i].mobile}@c.us`, media,{'caption':`${dataRow[i].scode}`});
+                  client.sendMessage(`91${dataRow[i].mobile}@c.us`, media,{'caption':`Salam 
+
+Sabeel Code : ${dataRow[i].scode}
+Ashara Mubaraka 1444 vaste aap ni safai chitthi che
+Aap *SELF ALLOCATION VASTE ELIGIBLE CHO*
+Self allocation vaste date  aaenda khabar karwa ma aavse
+
+Shukran`});
+                  // client.sendMessage(`91${dataRow[i].mobile}@c.us`, tempMsg);
                   countReg += 1;
                   // client.sendMessage(media,})
                 } else {
