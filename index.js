@@ -17,7 +17,7 @@ let msg;
 let phone_list = '';
 var csvfilepath = "data.csv";
 client.on("message", (message) => {
-  console.log(message.from);
+//   console.log(message.from);
   if (message.body.includes("m$s$g$")) {
     msg = message.body.replace("m$s$g$", "");
     // console.log(msg)
@@ -130,7 +130,7 @@ Shukran`});
     let unregMob = [];
     let tempMsg = "";
     csvtojson()
-      .fromFilePath(csvfilepath)
+      .fromFile(csvfilepath)
       .then(async (jsonData) => {
         var x = jsonData;
         const demo1 = async function demo(dataRow) {
@@ -151,7 +151,7 @@ Shukran`});
                   unregMob.push(dataRow[i].its);
                 }
               });
-            await sleep(5000);
+            await sleep(3000);
           }
         };
         await demo1(x);
