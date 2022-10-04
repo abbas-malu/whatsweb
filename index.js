@@ -142,7 +142,7 @@ Shukran`});
                 // console.log(`${dataRow[i].mobile}@c.us`)
                 // client.isRegisteredUser('916232705352@c.us').then((regS)=>{console.log(regS)})
                 if (regStatus) {
-                  tempMsg = `${msg}`.replace('<name>', `${dataRow[i].name}`).replace('<unique>', `${dataRow[i].unique}`);
+                  tempMsg = `${msg}`.replace('<name>', `${dataRow[i].name}`).replace('<scode>', `${dataRow[i].scode}`).replace('<dept>', `${dataRow[i].dept}`);
                   client.sendMessage(`91${dataRow[i].mobile}@c.us`, tempMsg);
                   countReg += 1;
                   // client.sendMessage(media,})
