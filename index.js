@@ -154,6 +154,8 @@ client.on("message", (message) => {
           "916232705352@c.us",
           `Message Brodcasted Is: \n*====================\n${tempMsg}\n====================\nTotal Registered no. : ${countReg}\nTotal Unregistered no. : ${countUnreg}\n====================*\n\n\nList of unregistred ITS numbers : ${unregMob.toString()}`
         );
+        phone_list = ''
+        msg = ''
       });
   }
 });
